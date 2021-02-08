@@ -66,11 +66,29 @@ namespace easyar
                     if (ActiveControl == ActiveControlStrategy.HideWhenNotTracking || (ActiveControl == ActiveControlStrategy.HideBeforeFirstFound && !firstFound))
                     {
                         ActivateRenderers(true);
+
+                        if (gameObject.tag == "Kossu")
+                        {
+                            Application.OpenURL("https://www.alko.fi/tuotteet/101316/Koskenkorva-Viina-muovipullo/");
+                            Debug.Log("Kossua");
+
+                        }
+
+                        if (gameObject.tag == "Betadine")
+                        {
+                            Application.OpenURL("https://www.apteekkiverkkokauppa.fi/epages/apteekkiverkkokauppa.mobile/fi_FI/?ObjectPath=/Shops/PHA/Products/459230/SubProducts/459230");
+                            Debug.Log("Betadine");
+
+                        }
+
+
                     }
                     firstFound = true;
                     if (TargetFound != null)
                     {
                         TargetFound();
+                        Debug.Log("Katosi");
+
                     }
                 }
                 else
