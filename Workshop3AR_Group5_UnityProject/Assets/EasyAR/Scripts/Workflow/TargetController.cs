@@ -8,6 +8,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace easyar
@@ -23,6 +24,8 @@ namespace easyar
        
         public event Action TargetFound;
         public event Action TargetLost;
+
+        public Canvas Canvas;
 
         public enum ActiveControlStrategy
         {
@@ -69,7 +72,8 @@ namespace easyar
 
                         if (gameObject.tag == "Kossu")
                         {
-                            Application.OpenURL("https://www.alko.fi/tuotteet/101316/Koskenkorva-Viina-muovipullo/");
+                            Canvas.gameObject.SetActive(true);
+                            
                             Debug.Log("Kossua");
 
                         }
