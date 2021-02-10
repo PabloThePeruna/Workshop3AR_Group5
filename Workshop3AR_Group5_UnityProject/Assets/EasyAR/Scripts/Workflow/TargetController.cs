@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+
 namespace easyar
 {
   
@@ -25,7 +26,10 @@ namespace easyar
         public event Action TargetFound;
         public event Action TargetLost;
 
-        public Canvas Canvas;
+        public Canvas CanvasCuma;
+        public Canvas CanvasScanner;
+        public Canvas CanvasGold;
+     
 
         public enum ActiveControlStrategy
         {
@@ -70,18 +74,20 @@ namespace easyar
                     {
                         ActivateRenderers(true);
 
-                        if (gameObject.tag == "Kossu")
+                        if (gameObject.tag == "Cuma")
                         {
-                            Canvas.gameObject.SetActive(true);
-                            
-                            Debug.Log("Kossua");
+                            CanvasCuma.gameObject.SetActive(true);
+                            CanvasScanner.gameObject.SetActive(false);
+
+                            Debug.Log("Cuma");
 
                         }
 
-                        if (gameObject.tag == "Betadine")
+                        if (gameObject.tag == "Gold")
                         {
-                            Application.OpenURL("https://www.apteekkiverkkokauppa.fi/epages/apteekkiverkkokauppa.mobile/fi_FI/?ObjectPath=/Shops/PHA/Products/459230/SubProducts/459230");
-                            Debug.Log("Betadine");
+                            CanvasGold.gameObject.SetActive(true);
+                            CanvasScanner.gameObject.SetActive(false);
+                            Debug.Log("Gold");
 
                         }
 
